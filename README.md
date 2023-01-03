@@ -34,10 +34,27 @@
 * 응답을 반환한 후 종료
 
 ## 실행
+### 설정(Firefox)
+* **브라우저의 HTTP Proxy 설정**<br>
+[Preferences]-[Genenral]-[Network Proxy] - [settings]에서 HTTP proxy를 local IP, port 번호 38030으로 설정
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/71579787/210311845-cb682ee7-7c47-40c3-bdf0-d378e6aafe09.png" width = "400">
+</p>
 
+* **브라우저 캐시 데이터 삭제(매 검색마다)**<br>
+[Preferences]-[Privacy & Security]에서 History와 Cookies and Site Data 제거
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/71579787/210312302-4ebf4d95-83be-4c5d-a9ae-abdfb6ef2a23.png" width = "400">
+</p>
+
+### 실행
+1. 브라우저의 사이트 요청(MISS) - ※HTTP 접근이 가능한 사이트(ex) http://me.go.kr/home/web/main.do)
+2. 브라우저 캐시 삭제
+3. 1과 동일한 사이트 요청(HIT)
 
 
 ## 개발환경
 * 언어: C
 * 운영체제: Ubuntu 16.04.5 (VMware Workstation 15 Player)
+* 브라우저: Firefox
 
