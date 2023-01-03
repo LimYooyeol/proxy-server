@@ -99,7 +99,7 @@ int Check_Hit(char * buf,char * hashed, char* root){
 
         //check hit
         while(cache_d = readdir(cache_dp)){ //read entities in sub directories
-            if(strcmp(cache_d->d_name, hashed + 3*sizeof(char)) == 0){ //if hashed url already in cache
+            if((strncmp(d->d_name, hashed, 3) == 0) && strcmp(cache_d->d_name, hashed + 3*sizeof(char)) == 0){ //if hashed url already in cache
                 //record name in buf
                 char dir[100];
                 strcpy(dir, d->d_name);
