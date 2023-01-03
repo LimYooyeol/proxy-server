@@ -39,5 +39,5 @@
 
 ## 개발환경
 * 언어: C
-* 운영체제: Ubuntu 16.04.5
+* 운영체제: Ubuntu 16.04.5 (VMware Workstation 15 Player)
 
