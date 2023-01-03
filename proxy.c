@@ -199,10 +199,12 @@ int main(){
             tok = strtok(tmp, " ");
             char hostname[300];
             char *referer;
+            char *ico;
 
-            // get referer name
+            // get referer name, check if .ico request
             referer = strstr(buf, "Referer");
-            // end of get referer name
+            ico = strstr(buf, ".ico");
+            // end of get referer name, check if .ico request
             strcpy(method, tok);
             if(strcmp(method, "GET") == 0){
                 // get url
@@ -262,7 +264,7 @@ int main(){
 
             if(Is_Hit == 0 ){ // MISS
                 // log only when directly requested
-                if(referer == NULL){
+                if(referer == NULL && ico == NULL){
                     sprintf(log_msg, "[MISS]%s-%s\n", url, cur_time);
                     write(log_fd, log_msg, strlen(log_msg));
                 }// end lf log
@@ -329,7 +331,7 @@ int main(){
             } //End of MISS
             else if(Is_Hit == 1){ //HIT
                 // log only when directly requested
-                if(referer == NULL){
+                if(referer == NULL && ico == NULL){
                     sprintf(log_msg, "[HIT]%s-%s\n", url, cur_time);
                     write(log_fd, log_msg, strlen(log_msg));
                 }// end lf log
